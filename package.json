@@ -8,9 +8,12 @@
     "preview:pager": "vue serve ./src/components/Pager/preview.vue",
     "preview:avatar": "vue serve ./src/components/Avatar/preview.vue",
     "preview:icon": "vue serve ./src/components/Icon/preview.vue",
-    "preview:empty": "vue serve ./src/components/Empty/preview.vue"
+    "preview:empty": "vue serve ./src/components/Empty/preview.vue",
+    "preview:imageloader": "vue serve ./src/components/ImageLoader/preview.vue",
+    "preview:Contact": "vue serve ./src/components/Contact/preview.vue"
   },
   "dependencies": {
+    "animate.css": "^4.1.1",
     "core-js": "^3.6.5",
     "vue": "^2.6.11"
   },

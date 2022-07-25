@@ -16,7 +16,7 @@
 
 <script>
 import "@/styles/global.less";
-import Icon from "../Icon";
+import Icon from "@/components/Icon";
 
 // 导入需要的图片
 import qqPath from "@/assets/qq.jpg";
@@ -78,7 +78,7 @@ export default {
     a {
       cursor: pointer;
       color: @lightWords;
-      font-size: 16px;
+      font-size: 14px;
 
       position: relative;
 

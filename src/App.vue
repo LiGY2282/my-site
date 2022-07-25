@@ -1,19 +1,39 @@
 <template>
-  <div>
-    <h1>App组件</h1>
-    <Pager :total="300" />
+  <div class="app-container">
+    <Layout>
+      <template #left>
+        <div class="left">
+          <SiteAside />
+        </div>
+      </template>
+      <template #default>
+        <RouterView />
+      </template>
+    </Layout>
+    <ToTop />
   </div>
 </template>
 
 <script>
-import Pager from "./components/Pager";
-
+import Layout from "./components/Layout";
+import SiteAside from "./components/SiteAside";
+import ToTop from "./components/ToTop";
 export default {
   components: {
-    Pager,
+    Layout,
+    SiteAside,
+    ToTop,
   },
 };
 </script>
 
-<style scoped>
+<style scoped lang="less">
+@import "~@/styles/mix.less";
+.app-container {
+  .self-fill(fixed);
+  .left {
+    width: 250px;
+    height: 100%;
+  }
+}
 </style>

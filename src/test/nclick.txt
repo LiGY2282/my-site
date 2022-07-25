@@ -1,0 +1,34 @@
+<template>
+  <button @click="handleClick">{{content}}</button>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      nowCount: 0,
+    };
+  },
+  props: {
+    count: {
+      type: Number,
+      default: 10,
+    },
+    content: {
+      type: String,
+      default: "click",
+    },
+  },
+  methods: {
+    handleClick() {
+      this.nowCount++;
+      if (this.nowCount % this.count === 0) {
+        this.$emit("nclick");
+      }
+    },
+  },
+};
+</script>
+
+<style>
+</style>

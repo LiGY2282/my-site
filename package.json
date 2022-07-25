@@ -5,17 +5,28 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "preview:pager": "vue serve ./src/components/Pager/preview.vue",
-    "preview:avatar": "vue serve ./src/components/Avatar/preview.vue",
-    "preview:icon": "vue serve ./src/components/Icon/preview.vue",
-    "preview:empty": "vue serve ./src/components/Empty/preview.vue",
-    "preview:imageloader": "vue serve ./src/components/ImageLoader/preview.vue",
-    "preview:Contact": "vue serve ./src/components/Contact/preview.vue"
+    "test": "vue serve ./src/test/main.js",
+    "preview:Pager": "vue serve ./src/components/Pager/preview.vue",
+    "preview:Avatar": "vue serve ./src/components/Avatar/preview.vue",
+    "preview:Icon": "vue serve ./src/components/Icon/preview.vue",
+    "preview:Empty": "vue serve ./src/components/Empty/preview.vue",
+    "preview:ImageLoader": "vue serve ./src/components/ImageLoader/preview.vue",
+    "preview:Contact": "vue serve ./src/components/Contact/preview.vue",
+    "preview:Menu": "vue serve ./src/components/Menu/preview.vue",
+    "preview:SiteAside": "vue serve ./src/components/SiteAside/preview.vue",
+    "preview:Layout": "vue serve ./src/components/Layout/preview.vue",
+    "preview:Loading": "vue serve ./src/components/Loading/preview.vue",
+    "preview:RightList": "vue serve ./src/views/Blong/Components/RightList-preview.vue"
   },
   "dependencies": {
     "animate.css": "^4.1.1",
+    "axios": "^0.27.2",
     "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "highlightjs": "^9.16.2",
+    "mockjs": "^1.1.0",
+    "querystring": "^0.2.1",
+    "vue": "^2.6.11",
+    "vue-router": "3.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.8",

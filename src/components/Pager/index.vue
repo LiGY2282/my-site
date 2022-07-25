@@ -85,7 +85,7 @@ export default {
       if (newPager === this.current) {
         return;
       }
-      this.$emit("changePager", newPager);
+      this.$emit("pageChange", newPager);
     },
   },
 };
@@ -106,7 +106,6 @@ export default {
     cursor: pointer;
 
     &.numItem {
-      width: 15px;
       text-align: center;
     }
 

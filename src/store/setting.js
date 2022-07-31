@@ -1,4 +1,6 @@
 import { getSetting } from "@/api/setting";
+// 加载favicon
+import { loadFavicon } from "@/utils";
 
 export default {
     namespaced: true,
@@ -20,6 +22,7 @@ export default {
             const resp = await getSetting();
             ctx.commit("setSetting", resp);
             ctx.commit("setIsLoading", false);
+            // loadFavicon(resp.favicon);
         }
     }
 }

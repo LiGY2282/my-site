@@ -14,11 +14,13 @@ export default function (refValue) {
         mounted() {
             this.$refs[refValue].addEventListener("scroll", this.handleMainScroll);
             this.eventBus.$on("toTop", this.setMainScroll);
+            console.log(312);
         },
-        beforeDestroyed() {
+        beforeDestroy() {
             this.$refs[refValue].removeEventListener("scroll", this.handleMainScroll);
             this.eventBus.$emit("mainScroll");
             this.eventBus.$off("toTop", this.setMainScroll);
+            console.log(123);
         }
     }
 }

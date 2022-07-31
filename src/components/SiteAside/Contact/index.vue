@@ -2,7 +2,7 @@
   <div class="Contact-container">
     <!-- 使用v-for指令根据info数组生成内容 -->
     <div class="item" v-for="(item, i) in info" :key="i">
-      <a :href="item.url">
+      <a target="_self" :href="item.url">
         <Icon :type="item.type" />
         <span>{{ item.text }}</span>
 

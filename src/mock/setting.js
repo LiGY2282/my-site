@@ -4,9 +4,9 @@ Mock.mock("/api/setting", "get", {
     code: 0,
     msg: "",
     data: {
-        avatar: "https://cdn.pixabay.com/photo/2016/12/23/12/40/night-1927265__480.jpg",
-        siteTitle: "我的个人空间",
-        github: "https://gitee.com/v-lgy",
+        avatar: "https://lgy-assets.oss-cn-shanghai.aliyuncs.com/img/night-1927265__480.jpg",
+        siteTitle: "黑色蒲G英",
+        github: "https://github.com/v-lgy",
         qq: "2243089982",
         qqQrCode: "https://lgy-assets.oss-cn-shanghai.aliyuncs.com/qq.jpg",
         weixin: "LiGY2282",
@@ -14,6 +14,6 @@ Mock.mock("/api/setting", "get", {
         mail: "v.lgy@qq.com",
         icp: "Null",
         githubName: "黑色蒲G英",
-        favicon: "Null",
+        favicon: "https://lgy-assets.oss-cn-shanghai.aliyuncs.com/img/2022073102564243.ico",
     }
 })

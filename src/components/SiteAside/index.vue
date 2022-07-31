@@ -1,12 +1,11 @@
 <template>
-  <div class="site-aside-container">
-    <Avatar
-      url="https://cdn.pixabay.com/photo/2016/12/23/12/40/night-1927265__480.jpg"
-      :size="150"
-    />
-    <Menu />
-    <Contact />
-    <p class="AQ">Lorem ipsum dolor</p>
+  <div class="site-aside-container" v-loading="isLoading">
+    <template v-if="data">
+      <Avatar :url="data.avatar" :size="150" />
+      <Menu />
+      <Contact/>
+      <p class="AQ">{{ data.icp }}</p>
+    </template>
   </div>
 </template>
 
@@ -14,11 +13,15 @@
 import Avatar from "@/components/Avatar";
 import Menu from "./Menu";
 import Contact from "./Contact";
+import { mapState } from "vuex";
 export default {
   components: {
     Avatar,
     Menu,
     Contact,
+  },
+  computed: {
+    ...mapState("setting", ["data", "isLoading"]),
   },
 };
 </script>
@@ -38,7 +41,7 @@ export default {
     margin: 0 auto;
   }
 
-  .AQ{
+  .AQ {
     text-align: center;
     margin-top: 30px;
   }

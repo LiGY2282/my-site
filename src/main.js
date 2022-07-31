@@ -16,7 +16,12 @@ import lazy from "@/directives/lazy";
 Vue.directive("loading", loading);
 Vue.directive("lazy", lazy);
 
+// 加载vuex仓库，并加载全局设置
+import store from "@/store";
+store.dispatch("setting/remoteSetting");
+
 new Vue({
+  store,
   router,
   render: h => h(App),
 }).$mount('#app')

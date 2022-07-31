@@ -2,7 +2,7 @@
   <div class="app-container">
     <Layout>
       <template #left>
-        <div class="left">
+        <div class="left-container">
           <SiteAside />
         </div>
       </template>
@@ -31,9 +31,10 @@ export default {
 @import "~@/styles/mix.less";
 .app-container {
   .self-fill(fixed);
-  .left {
+  .left-container {
     width: 250px;
     height: 100%;
+    position: relative;
   }
 }
 </style>

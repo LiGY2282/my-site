@@ -7,7 +7,9 @@ import VueRouter from "vue-router";
 import routes from "./routes.js";
 
 // 调用静态方法use使用我们的插件
-Vue.use(VueRouter);
+if(!window.VueRouter) {
+  Vue.use(VueRouter);
+}
 
 // 配置router对象
 const router = new VueRouter({

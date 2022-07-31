@@ -32,13 +32,12 @@
 </template>
 
 <script>
-import { getBanner } from "@/api/banner";
 import CarouselItem from "./CarouselItem.vue";
 import Icon from "@/components/Icon";
-import remoteData from "@/mixins/remoteData";
 
+import { mapState } from "vuex";
 export default {
-  mixins: [remoteData([])],
+  // mixins: [remoteData([])],
   components: {
     CarouselItem,
     Icon,
@@ -49,6 +48,10 @@ export default {
       containerHeight: 0, // 容器高度
       isSwicting: false, // 是否正在切换
     };
+  },
+  // 获取远程数据
+  created() {
+    this.$store.dispatch("banner/remoteBanner");
   },
   // 挂载之后得到容器的宽度
   mounted() {
@@ -62,11 +65,9 @@ export default {
     marginTop() {
       return -this.index * this.containerHeight + "px";
     },
+    ...mapState("banner", ["isLoading", "data"])
   },
   methods: {
-    getRemoteData() {
-      return getBanner();
-    },
     // 显示第一页轮播图的文字
     showFirstCarousel() {
       this.$refs.car[0].showText();

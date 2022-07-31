@@ -13,5 +13,18 @@
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+
+    <!-- ref cdn -->
+    <!-- <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.2.37/vue.global.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vuex/4.0.2/vuex.global.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.27.2/axios.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue-router/4.1.2/vue-router.global.min.js"></script> -->
+
+    <% if(NODE_ENV === "production") { %>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.12/vue.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vuex/3.5.1/vuex.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue-router/3.4.7/vue-router.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.0/axios.min.js"></script>
+    <% } %>
   </body>
 </html>

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --modern",
     "test": "vue serve ./src/test/main.js",
     "preview:Pager": "vue serve ./src/components/Pager/preview.vue",
     "preview:Avatar": "vue serve ./src/components/Avatar/preview.vue",
@@ -24,15 +24,19 @@
     "core-js": "^3.6.5",
     "highlightjs": "^9.16.2",
     "mockjs": "^1.1.0",
+    "nprogress": "^0.2.0",
+    "progress": "^2.0.3",
     "querystring": "^0.2.1",
     "vue": "^2.6.11",
-    "vue-router": "3.1"
+    "vue-router": "3.1",
+    "vuex": "^3.6.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.8",
     "@vue/cli-service": "~4.5.8",
     "less": "^3.0.4",
     "less-loader": "^5.0.0",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "webpack-bundle-analyzer": "^4.5.0"
   }
 }

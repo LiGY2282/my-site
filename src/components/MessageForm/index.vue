@@ -1,5 +1,5 @@
 <template>
-  <div class="message-form-contaienr">
+  <div class="message-form-container">
     <TextArea v-on="$listeners" />
     <div class="title-wrapper">
       <h3>

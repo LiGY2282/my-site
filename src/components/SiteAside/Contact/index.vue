@@ -22,37 +22,40 @@ import Icon from "@/components/Icon";
 import qqPath from "@/assets/qq.jpg";
 import weixinPath from "@/assets/weixin.jpg";
 
+import { mapState } from "vuex";
+
 export default {
-  data() {
-    return {
-      info: [
+  components: {
+    Icon,
+  },
+  computed: {
+    ...mapState("setting", ["data"]),
+    info() {
+      return [
         {
           type: "github",
-          text: "v-lgy",
-          url: `https://gitee.com/v-lgy`,
+          text: this.data.githubName,
+          url: this.data.github,
         },
         {
           type: "mail",
-          text: "v.lgy@qq.com",
-          url: `mailto:v.lgy@qq.com`,
+          text: this.data.mail,
+          url: `mailto:${this.data.mail}`,
         },
         {
           type: "qq",
-          text: "2243089982",
-          url: "tencent://message/?Menu=yes&uin=2243089982&Service=300&sigT=45a1e5847943b64c6ff3990f8a9 e644d2b31356cb0b4ac6b24663a3c8dd0f8aa12a595b1714f9d45",
-          qrcode: qqPath,
+          text: this.data.qq,
+          url: `tencent://message/?Menu=yes&uin=${this.data.qq}&Service=300&sigT=45a1e5847943b64c6ff3990f8a9 e644d2b31356cb0b4ac6b24663a3c8dd0f8aa12a595b1714f9d45`,
+          qrcode: this.data.qqQrCode,
         },
         {
           type: "weixin",
-          text: "LiGY2282",
+          text: this.data.weixin,
           url: `#`,
-          qrcode: weixinPath,
+          qrcode: this.data.weixinQrCode,
         },
-      ],
-    };
-  },
-  components: {
-    Icon,
+      ];
+    },
   },
 };
 </script>

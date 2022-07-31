@@ -19,27 +19,29 @@ Mock.mock("/api/blongtype", "get", {
 import qs from "querystring";
 Mock.mock(/\/api\/blog(\?.+)?$/, "get", function (option) {
   const query = qs.parse(option.url);
+
+  const data = {
+    "total|2000-3000": 0,
+    [`rows|${query.limit || 10}`]: [
+      {
+        id: "@guid",
+        title: "@ctitle(10, 30)",
+        description: "@csentence(10, 100)",
+        category: {
+          "id|1-9": 0,
+          name: "分类@id"
+        },
+        "scanNumber|100-300": 0,
+        "commentNumber|30-79": 0,
+        "thumb|1": ["@image(300x250, @color, #fff, hello)"],
+        createDate: "@date('T')"
+      }
+    ]
+  }
   return Mock.mock({
     code: 0,
     msg: "",
-    data: {
-      "total|2000-3000": 0,
-      [`rows|${query.limit || 10}`]: [
-        {
-          id: "@guid",
-          title: "@ctitle(10, 30)",
-          description: "@csentence(10, 100)",
-          category: {
-            "id|1-9": 0,
-            name: "分类@id"
-          },
-          "scanNumber|100-300": 0,
-          "commentNumber|30-79": 0,
-          "thumb|1": ["@image(300x250, @color, #fff, hello)"],
-          createDate: "@date('T')"
-        }
-      ]
-    }
+    data
   })
 })
 

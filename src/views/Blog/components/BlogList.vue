@@ -16,7 +16,7 @@
         <div class="main-content">
           <!-- 标题 -->
           <RouterLink :to="{ name: 'BlogDetail', params: { id: item.id } }">
-            <h2  class="title">{{ item.title }}</h2>
+            <h2 class="title">{{ item.title }}</h2>
           </RouterLink>
 
           <!-- 文章信息 -->
@@ -39,6 +39,7 @@
         :limit="10"
       />
     </ul>
+    <Empty v-if="data.total === 0 && !isLoading" />
   </div>
 </template>
 
@@ -48,6 +49,7 @@ import { getBlog } from "@/api/blog";
 import { formatDate } from "@/utils";
 import Pager from "@/components/Pager";
 import mainScroll from "@/mixins/mainScroll";
+import Empty from "@/components/Empty";
 export default {
   mixins: [remoteData({}), mainScroll("blog")],
   methods: {
@@ -99,6 +101,7 @@ export default {
   },
   components: {
     Pager,
+    Empty,
   },
   watch: {
     // 监控路由变化

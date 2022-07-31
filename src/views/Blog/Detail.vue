@@ -29,8 +29,12 @@ export default {
     BlogComment,
   },
   methods: {
-    getRemoteData() {
-      return getBlogSingBlog(this.$route.params.id);
+    async getRemoteData() {
+      const resp = await getBlogSingBlog(this.$route.params.id);
+      if (!resp) {
+        this.$router.push("/404");
+      }
+      return resp;
     },
   },
   updated() {

@@ -16,7 +16,7 @@ export default {
             type: Number,
             default: 150
         }
-    }
+    },
 }
 </script>
 

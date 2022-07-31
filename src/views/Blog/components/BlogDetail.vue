@@ -1,20 +1,22 @@
 <template>
   <div class="blog-detail-container">
-
     <!-- 标题 -->
     <h1>{{ blogData.title }}</h1>
 
     <!-- 文章的一些附加信息 -->
     <div class="aside">
       <span>日期：{{ formatDate(blogData.createDate) }}</span>
-      <span>浏览：{{blogData.scanNumber}}</span>
-      <a href="#comment">评论：{{blogData.commentNumber}}</a>
-      <RouterLink :to="{
-        name: 'BlogCategory',
-        params: {
-          categoryId: blogData.category.id
-        }
-      }">{{blogData.category.name}}</RouterLink>
+      <span>浏览：{{ blogData.scanNumber }}</span>
+      <a href="#comment">评论：{{ blogData.commentNumber }}</a>
+      <RouterLink
+        :to="{
+          name: 'BlogCategory',
+          params: {
+            categoryId: blogData.category.id,
+          },
+        }"
+        >{{ blogData.category.name }}</RouterLink
+      >
     </div>
 
     <!-- 主体内容 -->
@@ -41,16 +43,16 @@ export default {
 <style scoped lang="less">
 @import "~@/styles/markdown.css";
 @import "~@/styles/variable.less";
-.aside{
+.aside {
   color: @gray;
   font-size: 12px;
   margin: 8px 0;
-  *{  
+  * {
     margin-right: 12px;
   }
 }
 
-.content{
+.content {
   margin: 30px 0;
 }
 </style>
